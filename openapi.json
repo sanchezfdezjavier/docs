@@ -1,0 +1,978 @@
+{
+  "openapi": "3.1.0",
+  "info": { "title": "FastAPI", "version": "0.1.0" },
+  "paths": {
+    "/index/v0/{flow_id}/{org}/{node_id}": {
+      "get": {
+        "tags": ["index"],
+        "summary": "Get Index",
+        "operationId": "get_index_index_v0__flow_id___org___node_id__get",
+        "parameters": [
+          {
+            "description": "Flow ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Flow Id",
+              "description": "Flow ID"
+            },
+            "name": "flow_id",
+            "in": "path"
+          },
+          {
+            "description": "Organization ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Org",
+              "description": "Organization ID"
+            },
+            "name": "org",
+            "in": "path"
+          },
+          {
+            "description": "Node with knowledge base",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Node Id",
+              "description": "Node with knowledge base"
+            },
+            "name": "node_id",
+            "in": "path"
+          },
+          {
+            "description": "Authorization header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Authorization header"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {},
+                  "type": "array",
+                  "title": "Response Get Index Index V0  Flow Id   Org   Node Id  Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["index"],
+        "summary": "De Index Files Api",
+        "operationId": "de_index_files_api_index_v0__flow_id___org___node_id__delete",
+        "parameters": [
+          {
+            "description": "Flow ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Flow Id",
+              "description": "Flow ID"
+            },
+            "name": "flow_id",
+            "in": "path"
+          },
+          {
+            "description": "Organization ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Org",
+              "description": "Organization ID"
+            },
+            "name": "org",
+            "in": "path"
+          },
+          {
+            "description": "Node with knowledge base",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Node Id",
+              "description": "Node with knowledge base"
+            },
+            "name": "node_id",
+            "in": "path"
+          },
+          {
+            "description": "Authorization header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Authorization header"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": { "type": "string" },
+                "type": "array",
+                "title": "Filenames",
+                "description": "Names of the files to de-index"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {},
+                  "type": "array",
+                  "title": "Response De Index Files Api Index V0  Flow Id   Org   Node Id  Delete"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/index/v0/documents/{flow_id}/{org}/{node_id}": {
+      "post": {
+        "tags": ["index"],
+        "summary": "Index Documents",
+        "operationId": "index_documents_index_v0_documents__flow_id___org___node_id__post",
+        "parameters": [
+          {
+            "description": "Flow ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Flow Id",
+              "description": "Flow ID"
+            },
+            "name": "flow_id",
+            "in": "path"
+          },
+          {
+            "description": "Organization ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Org",
+              "description": "Organization ID"
+            },
+            "name": "org",
+            "in": "path"
+          },
+          {
+            "description": "Node with knowledge base",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Node Id",
+              "description": "Node with knowledge base"
+            },
+            "name": "node_id",
+            "in": "path"
+          },
+          {
+            "description": "Authorization header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Authorization header"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": { "type": "string", "format": "binary" },
+                "type": "array",
+                "title": "Files",
+                "description": "Files to index"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {},
+                  "type": "array",
+                  "title": "Response Index Documents Index V0 Documents  Flow Id   Org   Node Id  Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["index"],
+        "summary": "Patch Index Documents",
+        "operationId": "patch_index_documents_index_v0_documents__flow_id___org___node_id__patch",
+        "parameters": [
+          {
+            "description": "ID of the flow",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Flow Id",
+              "description": "ID of the flow"
+            },
+            "name": "flow_id",
+            "in": "path"
+          },
+          {
+            "description": "Organization ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Org",
+              "description": "Organization ID"
+            },
+            "name": "org",
+            "in": "path"
+          },
+          {
+            "description": "Node with knowledge base",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Node Id",
+              "description": "Node with knowledge base"
+            },
+            "name": "node_id",
+            "in": "path"
+          },
+          {
+            "description": "Authorization header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Authorization header"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": { "type": "string", "format": "binary" },
+                "type": "array",
+                "title": "Files",
+                "description": "Files to index"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {},
+                  "type": "array",
+                  "title": "Response Patch Index Documents Index V0 Documents  Flow Id   Org   Node Id  Patch"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/index/v0/urls/{flow_id}/{org}/{node_id}": {
+      "post": {
+        "tags": ["index"],
+        "summary": "Index Urls",
+        "operationId": "index_urls_index_v0_urls__flow_id___org___node_id__post",
+        "parameters": [
+          {
+            "description": "ID of the flow",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Flow Id",
+              "description": "ID of the flow"
+            },
+            "name": "flow_id",
+            "in": "path"
+          },
+          {
+            "description": "Organization ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Org",
+              "description": "Organization ID"
+            },
+            "name": "org",
+            "in": "path"
+          },
+          {
+            "description": "Node with knowledge base",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Node Id",
+              "description": "Node with knowledge base"
+            },
+            "name": "node_id",
+            "in": "path"
+          },
+          {
+            "description": "Authorization header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Authorization header"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": { "type": "string" },
+                "type": "array",
+                "title": "Urls",
+                "description": "URLs to index"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {},
+                  "type": "array",
+                  "title": "Response Index Urls Index V0 Urls  Flow Id   Org   Node Id  Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["index"],
+        "summary": "Patch Index Urls",
+        "operationId": "patch_index_urls_index_v0_urls__flow_id___org___node_id__patch",
+        "parameters": [
+          {
+            "description": "ID of the flow",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Flow Id",
+              "description": "ID of the flow"
+            },
+            "name": "flow_id",
+            "in": "path"
+          },
+          {
+            "description": "Organization ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Org",
+              "description": "Organization ID"
+            },
+            "name": "org",
+            "in": "path"
+          },
+          {
+            "description": "Node with knowledge base",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Node Id",
+              "description": "Node with knowledge base"
+            },
+            "name": "node_id",
+            "in": "path"
+          },
+          {
+            "description": "Authorization header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Authorization header"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": { "type": "string" },
+                "type": "array",
+                "title": "Urls",
+                "description": "URLs to index"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {},
+                  "type": "array",
+                  "title": "Response Patch Index Urls Index V0 Urls  Flow Id   Org   Node Id  Patch"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/index/v0/data/{flow_id}/{org}/{node_id}": {
+      "post": {
+        "tags": ["index"],
+        "summary": "Index Data",
+        "operationId": "index_data_index_v0_data__flow_id___org___node_id__post",
+        "parameters": [
+          {
+            "description": "ID of the flow",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Flow Id",
+              "description": "ID of the flow"
+            },
+            "name": "flow_id",
+            "in": "path"
+          },
+          {
+            "description": "Organization ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Org",
+              "description": "Organization ID"
+            },
+            "name": "org",
+            "in": "path"
+          },
+          {
+            "description": "Node with knowledge base",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Node Id",
+              "description": "Node with knowledge base"
+            },
+            "name": "node_id",
+            "in": "path"
+          },
+          {
+            "description": "Authorization header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Authorization header"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": { "type": "object" },
+                "type": "array",
+                "title": "Data",
+                "description": "Data to index"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {},
+                  "type": "array",
+                  "title": "Response Index Data Index V0 Data  Flow Id   Org   Node Id  Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["index"],
+        "summary": "Patch Index Data",
+        "operationId": "patch_index_data_index_v0_data__flow_id___org___node_id__patch",
+        "parameters": [
+          {
+            "description": "ID of the flow",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Flow Id",
+              "description": "ID of the flow"
+            },
+            "name": "flow_id",
+            "in": "path"
+          },
+          {
+            "description": "Organization ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Org",
+              "description": "Organization ID"
+            },
+            "name": "org",
+            "in": "path"
+          },
+          {
+            "description": "Node with knowledge base",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Node Id",
+              "description": "Node with knowledge base"
+            },
+            "name": "node_id",
+            "in": "path"
+          },
+          {
+            "description": "Authorization header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Authorization header"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": { "type": "object" },
+                "type": "array",
+                "title": "Data",
+                "description": "Data to index"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {},
+                  "type": "array",
+                  "title": "Response Patch Index Data Index V0 Data  Flow Id   Org   Node Id  Patch"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inference/v0/run/{org}/{flow_id}": {
+      "post": {
+        "tags": ["inference"],
+        "summary": "Run Deployed Flow",
+        "operationId": "run_deployed_flow_inference_v0_run__org___flow_id__post",
+        "parameters": [
+          {
+            "description": "ID of the flow",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Flow Id",
+              "description": "ID of the flow"
+            },
+            "name": "flow_id",
+            "in": "path"
+          },
+          {
+            "description": "Organization ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Org",
+              "description": "Organization ID"
+            },
+            "name": "org",
+            "in": "path"
+          },
+          {
+            "description": "Version of the flow",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Version",
+              "description": "Version of the flow",
+              "default": -1
+            },
+            "name": "version",
+            "in": "query"
+          },
+          {
+            "description": "Authorization header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Authorization header"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "title": "Inputs",
+                "description": "Input parameters for the flow"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": { "application/json": { "schema": {} } }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inference/v0/stream/{org}/{flow_id}": {
+      "post": {
+        "tags": ["inference"],
+        "summary": "Stream Exported Flow",
+        "operationId": "stream_exported_flow_inference_v0_stream__org___flow_id__post",
+        "parameters": [
+          {
+            "description": "Organization ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Org",
+              "description": "Organization ID"
+            },
+            "name": "org",
+            "in": "path"
+          },
+          {
+            "description": "ID of the flow",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Flow Id",
+              "description": "ID of the flow"
+            },
+            "name": "flow_id",
+            "in": "path"
+          },
+          {
+            "description": "Version of the flow",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Version",
+              "description": "Version of the flow",
+              "default": -1
+            },
+            "name": "version",
+            "in": "query"
+          },
+          {
+            "description": "Add a prefix to the output",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "title": "Prefix",
+              "description": "Add a prefix to the output",
+              "default": false
+            },
+            "name": "prefix",
+            "in": "query"
+          },
+          {
+            "description": "Stream deltas instead of full output",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "title": "Delta",
+              "description": "Stream deltas instead of full output",
+              "default": true
+            },
+            "name": "delta",
+            "in": "query"
+          },
+          {
+            "description": "Use server sent events instead of streaming response",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "title": "Sse",
+              "description": "Use server sent events instead of streaming response",
+              "default": false
+            },
+            "name": "sse",
+            "in": "query"
+          },
+          {
+            "description": "Authorization header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Authorization",
+              "description": "Authorization header"
+            },
+            "name": "authorization",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "title": "Inputs",
+                "description": "Input parameters for the flow"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": { "application/json": { "schema": {} } }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/index_urls_webhook/{org}/{flow_id}/{node_id}/{token}/{depth}/{apify}/{apify_key}": {
+      "get": {
+        "summary": "Index Urls Webhook",
+        "operationId": "index_urls_webhook_index_urls_webhook__org___flow_id___node_id___token___depth___apify___apify_key__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": { "type": "string", "title": "Org" },
+            "name": "org",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": { "type": "string", "title": "Flow Id" },
+            "name": "flow_id",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": { "type": "string", "title": "Node Id" },
+            "name": "node_id",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": { "type": "string", "title": "Token" },
+            "name": "token",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": { "type": "integer", "title": "Depth" },
+            "name": "depth",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": { "type": "string", "title": "Apify" },
+            "name": "apify",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": { "type": "string", "title": "Apify Key" },
+            "name": "apify_key",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": { "application/json": { "schema": {} } }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": { "$ref": "#/components/schemas/ValidationError" },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": { "anyOf": [{ "type": "string" }, { "type": "integer" }] },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": { "type": "string", "title": "Message" },
+          "type": { "type": "string", "title": "Error Type" }
+        },
+        "type": "object",
+        "required": ["loc", "msg", "type"],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

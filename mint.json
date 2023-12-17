@@ -68,6 +68,26 @@
         "api-reference/endpoint/create",
         "api-reference/endpoint/delete"
       ]
+    },
+    {
+      "group": "index",
+      "pages": [
+        "api-reference/index/get-index",
+        "api-reference/index/de-index-files-api",
+        "api-reference/index/index-documents",
+        "api-reference/index/patch-index-documents",
+        "api-reference/index/index-urls",
+        "api-reference/index/patch-index-urls",
+        "api-reference/index/index-data",
+        "api-reference/index/patch-index-data"
+      ]
+    },
+    {
+      "group": "inference",
+      "pages": [
+        "api-reference/inference/run-deployed-flow",
+        "api-reference/inference/stream-exported-flow"
+      ]
     }
   ],
   "footerSocials": {
