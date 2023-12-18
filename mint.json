@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Stack AI documentation",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/stack.png",
+    "light": "/logo/stack.png"
   },
   "favicon": "/favicon.svg",
   "colors": {
@@ -27,7 +27,7 @@
   },
   "tabs": [
     {
-      "name": "API Reference",
+      "name": "Knowledge Base API",
       "url": "api-reference"
     }
   ],
@@ -51,11 +51,7 @@
   "navigation": [
     {
       "group": "Get Started",
-      "pages": ["introduction", "platformoverview", "quickstart", "New to generative AI?", "development"]
-    },
-    {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
+      "pages": ["introduction", "platformoverview", "New to generative AI?"]
     },
     {
       "group": "API Documentation",
